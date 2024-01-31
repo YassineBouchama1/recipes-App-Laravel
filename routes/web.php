@@ -3,6 +3,8 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RecipesController;
+use App\Http\Middleware\RedirectIfAuthenticated;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +20,7 @@ use App\Http\Controllers\RecipesController;
 Route::prefix('')->group(function () {
     Route::get('/', [RecipesController::class, 'index'])->name('display.index');
 
-    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::middleware([RedirectIfAuthenticated::class])->get('/login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AuthController::class, 'loginUser'])->name('auth.login');
     Route::post('/logout', [AuthController::class, 'logoutFun'])->name('logout');
 

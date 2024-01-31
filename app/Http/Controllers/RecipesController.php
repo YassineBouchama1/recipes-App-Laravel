@@ -109,7 +109,7 @@ class RecipesController extends Controller
     {
         // Validation rules
         $request->validate([
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'content' => 'required|string',
             'title' => 'required|string',
             'category_id' => 'required'

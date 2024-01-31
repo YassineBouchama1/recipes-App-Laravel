@@ -80,22 +80,12 @@ class AuthController extends Controller
 
 
             if (!Auth::attempt($request->only(['email', 'password']))) {
-                return  redirect('admin')->with('success', 'Email & Password does not match with our record.');
-
-                // return response()->json([
-                //     'status' => false,
-                //     'message' => 'Email & Password does not match with our record.',
-                // ], 401);
+                return back()->with('error', 'Email & Password do not match our records.');
             }
 
             $user = User::where('email', $request->email)->first();
 
-            return  redirect('admin')->with('success', 'User Logged In Successfully');
-            // return response()->json([
-            //     'status' => true,
-            //     'message' => 'User Logged In Successfully',
-            //     'token' => $user->createToken("API TOKEN")->plainTextToken
-            // ], 200);
+            return  redirect('admin');
         } catch (\Throwable $th) {
             return response()->json([
                 'status' => false,

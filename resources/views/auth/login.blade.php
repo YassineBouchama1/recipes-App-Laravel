@@ -14,9 +14,11 @@ from index
 @endif
 
 
-@if ($message = Session::get('success'))
-<p>{{$message}}</p>
-@endif
+@if ($message = Session::get('error'))
+<li class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+    <span class="font-medium">Danger alert!</span> {{ $message }}
+  </li>
+  @endif
 
 <section class="bg-gray-50 dark:bg-gray-900">
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
