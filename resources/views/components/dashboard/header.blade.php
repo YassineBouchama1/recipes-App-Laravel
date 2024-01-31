@@ -5,7 +5,18 @@
 
 
 
-<ul class="flex  gap-2">
+<ul class="flex  gap-x-5">
+
+    <div class="group ">
+
+        <a href="/">
+       Home </a>
+
+        <div class=" group-hover:flex hidden popover absolute bg-gray-700 border shadow-md mt-2 px-2   py-1 rounded-lg">
+
+          <p class="text-white ">Home</p>
+        </div>
+      </div>
     <div class="group ">
 
         <a href="/admin">
@@ -19,8 +30,21 @@
 
       <div class="group ">
 
-        <a href="admin/create">
+        <a href="../create">
        Create</a>
+
+        <div class=" group-hover:flex hidden popover absolute bg-gray-700 border shadow-md mt-2 px-2   py-1 rounded-lg">
+
+          <p class="text-white ">Create</p>
+        </div>
+      </div>
+
+      <div   class="group ">
+        {{-- <form action="{{ route('logout') }}" method="POST"> --}}
+          <form action="{{ route('logout') }}" method="POST">
+            @csrf()
+            <button>Logout</button>
+       </form>
 
         <div class=" group-hover:flex hidden popover absolute bg-gray-700 border shadow-md mt-2 px-2   py-1 rounded-lg">
 

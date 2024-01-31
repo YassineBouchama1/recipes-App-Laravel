@@ -4,7 +4,7 @@
 {{$recipe->title}}
 @endpush
 
-{{ $recipe}}<body class="bg-gray-100">
+<body class="bg-gray-100">
     <div class="container mx-auto p-6">
         <div class="bg-white p-6 rounded-lg shadow-lg">
 
@@ -13,7 +13,7 @@
             </h1>
             <span>{{$recipe->category['name']}}</span>
 
-            <img class="max-w-sm mx-auto my-4 rounded-lg shadow" src="https://images.unsplash.com/photo-1616031037011-087000171abe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxM3x8Q2hvY29sYXRlJTIwQ2FrZXxlbnwwfDB8fHwxNjk0MTc2ODk0fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Chocolate Cake" class="mb-4 rounded-lg shadow-md">
+            <img class="max-w-sm mx-auto my-4 rounded-lg shadow" src="{{ asset('images').'/'.$recipe->image }}" alt="Chocolate Cake" class="mb-4 rounded-lg shadow-md">
 
             <h2 class="text-xl font-semibold mb-2">Ingredients</h2>
             <ul class="list-disc list-inside mb-4">

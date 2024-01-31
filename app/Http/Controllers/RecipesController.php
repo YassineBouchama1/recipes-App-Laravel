@@ -12,13 +12,18 @@ class RecipesController extends Controller
      * Display a listing of the resource.
      */
     private $columns = ['title', 'content', 'category_id', 'image'];
-    public function index()
-    {
-        // $test = Test::get();
-        $recipes = Recipes::with('category')->get();
-        // $test = Test::get();
 
-        return view('index', compact('recipes'));
+    public function index(Request $request)
+    {
+
+        $recipes = Recipes::with('category');
+        if ($request->has('search')) {
+            $searchTerm = '%' . $request->get('search') . '%';
+            $recipes->where('title', 'like', $searchTerm);
+        }
+
+
+        return view('index', ['recipes' => $recipes->paginate(10)]);
     }
     public function adminIndex()
     {
@@ -142,6 +147,6 @@ class RecipesController extends Controller
     public function destroy(string $id)
     {
         Recipes::where('id', $id)->delete($id);
-        return redirect('admin');
+        return   back()->with('success', 'You have successfully Deleted the recipe.');
     }
 }

@@ -1,6 +1,6 @@
 <a href="show/{{$data->id}}" class="overflow-hidden rounded-2xl bg-gray-50">
     <div class="flex items-center h-[180px] overflow-hidden">
-      <img src="https://thumbnails.production.thenounproject.com/c4UZhX8RJFowtAoq8OZlUjIFmBg=/fit-in/1000x1000/photos.production.thenounproject.com/photos/D0EE41F3-3CB3-4F1E-B6E5-4CCE5B1DCB17.jpg" alt="Hamburger" />
+      <img src="{{ asset('images').'/'.$data->image }}" alt="Hamburger" />
     </div>
 
     <div class="p-6">
