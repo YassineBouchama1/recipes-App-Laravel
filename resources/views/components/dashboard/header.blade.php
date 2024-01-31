@@ -9,7 +9,7 @@
 
     <div class="group ">
 
-        <a href="/">
+        <a href="{{ route('index') }}">
        Home </a>
 
         <div class=" group-hover:flex hidden popover absolute bg-gray-700 border shadow-md mt-2 px-2   py-1 rounded-lg">
@@ -19,7 +19,7 @@
       </div>
     <div class="group ">
 
-        <a href="/admin">
+        <a href="{{ route('admin.index') }}">
        Dashboard </a>
 
         <div class=" group-hover:flex hidden popover absolute bg-gray-700 border shadow-md mt-2 px-2   py-1 rounded-lg">
@@ -30,7 +30,7 @@
 
       <div class="group ">
 
-        <a href="../create">
+        <a href="{{ route('admin.create') }}">
        Create</a>
 
         <div class=" group-hover:flex hidden popover absolute bg-gray-700 border shadow-md mt-2 px-2   py-1 rounded-lg">

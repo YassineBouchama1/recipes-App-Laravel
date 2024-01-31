@@ -4,7 +4,7 @@
 
 
 <section class=" bg-white rounded-md p-4 ">
-    <form action="{{route('recipes.update',['id'=>$recipe->id])}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('admin.update',['id'=>$recipe->id])}}" method="post" enctype="multipart/form-data">
         @csrf()
         @method('put')
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">

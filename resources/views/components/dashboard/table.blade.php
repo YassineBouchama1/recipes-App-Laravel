@@ -22,7 +22,7 @@
                             Edit</a>
 
 
-                            <form method="POST" action="{{ route('recipes.destroy', ['id' => $data->id]) }}" class="">
+                            <form method="POST" action="{{ route('admin.destroy', ['id' => $data->id]) }}" class="">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-white bg-red-700 hover:bg-red-800 font-medium rounded-full text-sm px-5 py-1 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Delete</button>

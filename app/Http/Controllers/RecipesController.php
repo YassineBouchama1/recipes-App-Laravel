@@ -27,9 +27,9 @@ class RecipesController extends Controller
     }
     public function adminIndex()
     {
-        // $test = Test::get();
+
         $recipes = Recipes::with('category')->get();
-        // $test = Test::get();
+    
 
         return view('admin.index', compact('recipes'));
     }

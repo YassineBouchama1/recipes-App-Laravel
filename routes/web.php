@@ -18,7 +18,7 @@ use App\Http\Middleware\RedirectIfAuthenticated;
 
 
 Route::prefix('')->group(function () {
-    Route::get('/', [RecipesController::class, 'index'])->name('display.index');
+    Route::get('/', [RecipesController::class, 'index'])->name('index');
 
     Route::middleware([RedirectIfAuthenticated::class])->get('/login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AuthController::class, 'loginUser'])->name('auth.login');
@@ -27,13 +27,16 @@ Route::prefix('')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::middleware('auth:sanctum')->group(function () {
             Route::get('/', [RecipesController::class, 'adminIndex'])->name('admin.index');
-            Route::get('/create', [RecipesController::class, 'create']);
-            Route::post('/create', [RecipesController::class, 'store'])->name('recipes.store');
-            Route::get('/edit/{id}', [RecipesController::class, 'edit'])->name('recipes.edit');
-            Route::put('/edit/{id}', [RecipesController::class, 'update'])->name('recipes.update');
-            Route::delete('/{id}', [RecipesController::class, 'destroy'])->name('recipes.destroy');
+            Route::get('/create', [RecipesController::class, 'create'])->name('admin.create');
+            Route::post('/create', [RecipesController::class, 'store'])->name('admin.store');
+            Route::get('/edit/{id}', [RecipesController::class, 'edit'])->name('admin.edit');
+            Route::put('/edit/{id}', [RecipesController::class, 'update'])->name('admin.update');
+            Route::delete('/{id}', [RecipesController::class, 'destroy'])->name('admin.destroy');
         });
     });
 
-    Route::get('/show/{id}', [RecipesController::class, 'show'])->name('recipes.show');
+    Route::get('/show/{id}', [RecipesController::class, 'show']);
 });
+
+
+Route::fallback(fn () => '404 page');

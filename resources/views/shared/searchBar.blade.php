@@ -1,5 +1,5 @@
 <div class='mb-20 flex justify-center'>
-<form action="{{route('display.index')}}" method="GET" class="flex rounded-full border-2 shadow-md px-2 w-full max-w-[600px]">
+<form action="{{route('admin.index')}}" method="GET" class="flex rounded-full border-2 shadow-md px-2 w-full max-w-[600px]">
 
 
     <input

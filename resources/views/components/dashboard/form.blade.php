@@ -2,7 +2,7 @@
 
 
 <section class=" bg-white rounded-md p-4 ">
-    <form action="{{route('recipes.store')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('admin.store')}}" method="post" enctype="multipart/form-data">
         @csrf()
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div>
