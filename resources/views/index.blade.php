@@ -3,6 +3,8 @@
 @push('title')
 from index
 @endpush
+
+
 <div class="p-6">
 
     <div class='mb-20 flex justify-center'>
@@ -36,16 +38,10 @@ from index
         </div>
   </div>
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+{{$recipes}}
+        @each('components.cardRecipe', $recipes, 'data', 'components.emptydata')
 
 
-
-        @includeif('components.cardRecipe')
-        @includeif('components.cardRecipe')
-        @includeif('components.cardRecipe')
-        @includeif('components.cardRecipe')
-        @includeif('components.cardRecipe')
-        @includeif('components.cardRecipe')
-        @includeif('components.cardRecipe')
     </div>
   </div>
   @endsection

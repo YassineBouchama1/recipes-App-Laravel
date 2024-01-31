@@ -12,10 +12,10 @@
 
   <!-- start sidebar -->
 
-  @includeIf('components.dashboard.Sidebar')
+
 
   <!-- start sidebar -->
-    <div class="w-full ml-auto block lg:ml-[280px]  px-5 rounded-lg lg:px-[16px]  max-w-[1200px] box-border ">
+    <div class="w-full ml-auto block   px-5 rounded-lg lg:px-[16px]   box-border ">
 
 
     <!-- Header Start -->

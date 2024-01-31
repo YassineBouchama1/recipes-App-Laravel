@@ -5,11 +5,21 @@ Dashboard | Create
 @endpush
 <div class="p-6">
 
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-
-
-
-kjjhnj
+    @if ($errors->any())
+    <div class="bg-red-200">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
     </div>
+    @endif
+
+      {{-- display msg if update successfylly --}}
+    @if ($message = Session::get('success'))
+    <p>{{$message}}</p>
+    @endif
+
+    @includeIf('components.dashboard.form')
   </div>
   @endsection
